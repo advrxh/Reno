@@ -11,9 +11,7 @@ export const createEmbed = (apodData) => {
                 url: apodData.image,
             },
             footer: {
-                text: today,
-                icon_url:
-                    "https://github.com/AadilVarsh/Reno/raw/master/images/star.png",
+                text: `• ${today}`,
             },
         },
     ];
@@ -25,9 +23,6 @@ export const createWebhookBody = (embeds) => {
         avatar_url:
             "https://github.com/AadilVarsh/Reno/raw/master/images/star.png",
         embeds: embeds,
-        thumbnail: {
-            url: "https://github.com/AadilVarsh/Reno/raw/master/images/star.png",
-        },
     };
     return webhookBody;
 };
