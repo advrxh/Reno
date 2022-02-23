@@ -25,5 +25,5 @@
 - Run 
 
     - ```bash
-      $ npm run reno
+      $ npm run start
       ```
