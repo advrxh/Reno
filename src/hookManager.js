@@ -1,17 +1,16 @@
 import fetch from "node-fetch";
 
 export const createEmbed = (apodData) => {
-    const today = new Date().toDateString();
     return [
         {
-            title: `${apodData.title} - ${today}`,
+            title: `${apodData.title} - ${apodData.date}`,
             color: 736657,
             description: apodData.description,
             image: {
                 url: apodData.image,
             },
             footer: {
-                text: `• ${today}`,
+                text: `• Astronomy Picture of the day - ${apodData.date}`,
             },
         },
     ];
@@ -38,7 +37,7 @@ export const postWebhook = async (hooks, webhookBody) => {
         }).then((response) => response);
 
         console.log(
-            `[${new Date().toTimeString()}] WEBHOOK_ID[${
+            `[${new Date().toDateString()}] [${new Date().toTimeString()}] WEBHOOK_ID[${
                 hook.slice(8).split("/")[3]
             }] OK[${response.ok}] STATUS[${response.status}]`
         );
